@@ -17,7 +17,7 @@ public class UserRestController {
     @Autowired
     private UserDAO userDAO;
 
-    @GetMapping("/")
+    @GetMapping("/user-list")
     public ResponseEntity<?> listAllUser() {
         ArrayList<User> list = userDAO.listAllUser();
         return new ResponseEntity<>(list, HttpStatus.OK);
