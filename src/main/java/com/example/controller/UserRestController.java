@@ -1,11 +1,12 @@
 package com.example.controller;
 
-import com.example.DAO.UserDAO;
-import com.example.model.User;
+
+
+import com.example.entity.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,11 +23,12 @@ public class UserRestController {
 
     @GetMapping("/user-list")
     public ResponseEntity<?> listAllUser() {
-        ArrayList<User> list = userService.listAllUser();
+//        ArrayList<User> list = userService.listAllUser();
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("status", "new");
-        return ResponseEntity.ok().headers(httpHeaders).body(list);
+//        return ResponseEntity.ok().headers(httpHeaders).body(list);
 //        return new ResponseEntity<>(list, HttpStatus.OK);
+        return  null;
     }
 
     @GetMapping("user/{id}")
@@ -36,6 +38,7 @@ public class UserRestController {
         httpHeaders.set("status", "list-one-user");
         return ResponseEntity.ok().headers(httpHeaders).body(user);
     }
+
 
 
 }
